@@ -28,7 +28,7 @@ module.exports = {
       },
     ],
     sidebar: 'auto',
-    lastUpdated: '上次更新时间',//上次更新时间
+    lastUpdated: 'Last Updated',//上次更新时间
     // displayAllHeaders: true // 默认值：false
   }
 }
