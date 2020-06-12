@@ -1,3 +1,4 @@
+const moment = require('moment');
 module.exports = {
   title: 'seth\'s blog',
   description: 'seth\'s blog,简单的笔记',
@@ -28,7 +29,21 @@ module.exports = {
       },
     ],
     sidebar: 'auto',
-    lastUpdated: 'Last Updated',//上次更新时间
+    lastUpdated: '上次更新时间',//上次更新时间
     // displayAllHeaders: true // 默认值：false
-  }
+  },
+  theme: '@vuepress/blog',
+  plugins: [
+    [
+      '@vuepress/last-updated',
+      {
+        transformer: (timestamp, lang) => {
+          // 不要忘了安装 moment
+          const moment = require('moment')
+          moment.locale('zh-cn')
+          return moment().format('lll')
+        }
+      }
+    ]
+  ]
 }
